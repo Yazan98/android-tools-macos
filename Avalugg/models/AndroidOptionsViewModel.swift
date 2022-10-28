@@ -189,6 +189,11 @@ class AndroidOptionsViewModel {
         return resultFiltered
     }
     
+    func validateConnectedDevice() {
+        currentConnectedDevice = ""
+        getConnectedDeviceName()
+    }
+    
     @discardableResult
     private func safeShell(_ command: String) throws -> String {
         let task = Process()

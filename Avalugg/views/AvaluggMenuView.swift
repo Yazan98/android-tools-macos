@@ -12,13 +12,18 @@ struct AvaluggMenuView: View {
     private let menu = NSMenu()
     private let applicationMenuConfiguration = ApplicationMenuConfiguration()
     private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
+    @State private var connectedDeviceInformation = ""
+    
+    init() {
+        connectedDeviceInformation = viewModel.getAdbConnectedDevice()
+    }
     
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
             VStack(alignment: .leading) {
                 Text("Android Device Developer Options")
-                Text(viewModel.getAdbConnectedDevice()).font(.system(size: 10))
+                Text(connectedDeviceInformation).font(.system(size: 10))
             }.padding(10)
             
             ForEach(viewModel.getOptionsList(), id: \.self) { option in
@@ -30,9 +35,15 @@ struct AvaluggMenuView: View {
             }
             
             Spacer()
-        }.padding(10)
+        }
+        .padding(10)
+        .onAppear(perform: onMainViewAppear)
     }
     
+    func onMainViewAppear() {
+        viewModel.validateConnectedDevice()
+        connectedDeviceInformation = viewModel.getAdbConnectedDevice()
+    }
     
     func createMenu() -> NSMenu {
         let parentView = AvaluggMenuView()
