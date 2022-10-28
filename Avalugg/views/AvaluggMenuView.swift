@@ -41,8 +41,10 @@ struct AvaluggMenuView: View {
     }
     
     func onMainViewAppear() {
-        viewModel.validateConnectedDevice()
-        connectedDeviceInformation = viewModel.getAdbConnectedDevice()
+        DispatchQueue.global(qos: .background).async {
+            viewModel.validateConnectedDevice()
+            connectedDeviceInformation = viewModel.getAdbConnectedDevice()
+        }
     }
     
     func createMenu() -> NSMenu {
