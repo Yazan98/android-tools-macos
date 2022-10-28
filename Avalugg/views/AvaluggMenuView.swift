@@ -9,6 +9,7 @@ import SwiftUI
 
 struct AvaluggMenuView: View {
     
+    private let menu = NSMenu()
     private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
     
     var body: some View {
@@ -29,6 +30,20 @@ struct AvaluggMenuView: View {
             
             Spacer()
         }.padding(10)
+    }
+    
+    
+    func createMenu() -> NSMenu {
+        let parentView = AvaluggMenuView()
+        let topView = NSHostingController(rootView: parentView)
+        topView.view.frame.size = CGSize(width: 300, height: 300)
+        
+        let customMenu = NSMenuItem()
+        customMenu.view = topView.view
+        
+        menu.addItem(customMenu)
+        menu.addItem(NSMenuItem.separator())
+        return menu
     }
     
 }

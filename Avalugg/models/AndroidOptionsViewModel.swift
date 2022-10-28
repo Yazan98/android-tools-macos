@@ -179,6 +179,10 @@ class AndroidOptionsViewModel {
         
         let result = try? safeShell(self.getAndroidDebugBridgeConnectionPath() + " devices")
         let devices = result!.split{$0 == "\n"}.map(String.init)
+        if devices.count == 1 {
+            return "Device Not Found !!"
+        }
+        
         let firstDevice = devices[1].split{$0 == " "}.map(String.init)
         let resultFiltered = firstDevice[0].replacingOccurrences(of: "device", with: "").trimmingCharacters(in: .whitespaces)
         currentConnectedDevice = resultFiltered
