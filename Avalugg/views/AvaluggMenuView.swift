@@ -14,7 +14,10 @@ struct AvaluggMenuView: View {
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
-            Text("Android Device Developer Options").padding(10)
+            VStack(alignment: .leading) {
+                Text("Android Device Developer Options")
+                Text(viewModel.getAdbConnectedDevice()).font(.system(size: 10))
+            }.padding(10)
             
             ForEach(viewModel.getOptionsList(), id: \.self) { option in
                 PanelOptionView(

@@ -13,5 +13,7 @@ enum AndroidEventType : String {
          backgroundProcessLimit = "BackgroundProcessLimit",
          gpuWatch = "GpuWatch",
          showViewUpdates = "ShowViewUpdates",
-         showLayoutBounds = "ShowLayoutBounds"
+         showLayoutBounds = "ShowLayoutBounds",
+         showTaps = "showTaps",
+         togglePointerLocation = "TogglePointerLocation"
 }

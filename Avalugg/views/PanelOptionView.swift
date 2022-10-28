@@ -22,6 +22,7 @@ struct PanelOptionView: View {
         self.optionName = optionName
         self.optionType = optionType
         self.viewModel = viewModel
+        self.isOptionEnabled = viewModel.isOptionEnabled(androidEvent: optionType)
     }
     
     var body: some View {
