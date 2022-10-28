@@ -16,9 +16,17 @@ class AndroidOptionsViewModel {
         switch (optionType) {
         case .showTaps:
             if state {
-                self.onTryCommandLine(command: "content insert --uri content://settings/system --bind name:s:show_touches --bind value:i:1")
+                self.onTryCommandLine(command: "shell settings put system show_touches 1")
             } else {
-                self.onTryCommandLine(command: "content insert --uri content://settings/system --bind name:s:show_touches --bind value:i:0")
+                self.onTryCommandLine(command: "shell settings put system show_touches 0")
+            }
+            break
+            
+        case .togglePointerLocation:
+            if state {
+                self.onTryCommandLine(command: "shell settings put system pointer_location 1")
+            } else {
+                self.onTryCommandLine(command: "shell settings put system pointer_location 0")
             }
             break
             
@@ -34,6 +42,11 @@ class AndroidOptionsViewModel {
                 optionHint: "Available on Almost Devices",
                 optionType: AndroidEventType.showLayoutBounds,
                 isOptionEnabled: self.isOptionEnabled(androidEvent: AndroidEventType.showLayoutBounds)
+            ),AvaluggOptionModel(
+                optionName: "Pointer Location",
+                optionHint: "Available on Almost Devices",
+                optionType: AndroidEventType.togglePointerLocation,
+                isOptionEnabled: self.isOptionEnabled(androidEvent: AndroidEventType.togglePointerLocation)
             ),
             AvaluggOptionModel(
                 optionName: "Device Don't Keep Activites",
@@ -62,6 +75,8 @@ class AndroidOptionsViewModel {
         case .showTaps:
             isOptionEnabledByCommandType = self.isOptionSelectedByKey(key: "show_touches")
             break
+        case .togglePointerLocation:
+            isOptionEnabledByCommandType = self.isOptionSelectedByKey(key: "pointer_location")
         default:
             isOptionEnabledByCommandType = false
             break

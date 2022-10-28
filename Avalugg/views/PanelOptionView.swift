@@ -46,11 +46,7 @@ struct PanelOptionView: View {
     }
     
     private func fetch() {
-        if isOptionEnabled {
-            print("Name : " + optionName + " : True")
-        } else {
-            print("Name : " + optionName + " : False")
-        }
+        self.isOptionEnabled = viewModel.isOptionEnabled(androidEvent: optionType)
     }
     
 }
