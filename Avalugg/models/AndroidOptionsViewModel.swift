@@ -30,9 +30,62 @@ class AndroidOptionsViewModel {
             }
             break
             
+        case .dontKeepActivites:
+            if state {
+                self.onTryCommandLine(command: "shell settings put global always_finish_activities 1")
+            } else {
+                self.onTryCommandLine(command: "shell settings put global always_finish_activities 0")
+            }
+            break
+            
+        case .showLayoutBounds:
+            if (state) {
+                self.onTryCommandLine(command: "shell setprop debug.layout true")
+                self.onTryCommandLine(command: "shell service call activity 1599295570")
+            } else {
+                self.onTryCommandLine(command: "shell setprop debug.layout false")
+                self.onTryCommandLine(command: "shell service call activity 1599295570")
+            }
+            
         default:
             break
         }
+    }
+    
+    private func isProperitySelected(key: String) -> Bool {
+        let commandPath = getAndroidDebugBridgeConnectionPath() + " " + "shell getprop " + key
+        print("Command : " + commandPath)
+        let properityInfo = try? self.safeShell(commandPath)
+        if properityInfo!.isEmpty {
+            return false
+        }
+        
+        if properityInfo!.contains("1") || properityInfo!.contains("true") {
+            return true
+        } else {
+            return false
+        }
+    }
+    
+    func isOptionEnabled(androidEvent: AndroidEventType) -> Bool {
+        var isOptionEnabledByCommandType: Bool = false
+        switch (androidEvent) {
+        case .showLayoutBounds:
+            isOptionEnabledByCommandType = self.isProperitySelected(key: "debug.layout")
+        case .showTaps:
+            isOptionEnabledByCommandType = self.isOptionSelectedByKey(key: "show_touches")
+            break
+        case .togglePointerLocation:
+            isOptionEnabledByCommandType = self.isOptionSelectedByKey(key: "pointer_location")
+            break
+        case .dontKeepActivites:
+            isOptionEnabledByCommandType = self.isSingleProperityEnabled(key: "always_finish_activities")
+            break
+        default:
+            isOptionEnabledByCommandType = false
+            break
+        }
+        return isOptionEnabledByCommandType
     }
     
     func getOptionsList() -> [AvaluggOptionModel] {
@@ -59,29 +112,8 @@ class AndroidOptionsViewModel {
                 optionHint: "Available on Almost Devices",
                 optionType: AndroidEventType.showTaps,
                 isOptionEnabled: self.isOptionEnabled(androidEvent: AndroidEventType.showTaps)
-            ),
-            AvaluggOptionModel(
-                optionName: "Show Layout Bounds",
-                optionHint: "Available on Almost Devices",
-                optionType: AndroidEventType.showLayoutBounds,
-                isOptionEnabled: self.isOptionEnabled(androidEvent: AndroidEventType.showLayoutBounds)
             )
         ]
-    }
-    
-    func isOptionEnabled(androidEvent: AndroidEventType) -> Bool {
-        var isOptionEnabledByCommandType: Bool = false
-        switch (androidEvent) {
-        case .showTaps:
-            isOptionEnabledByCommandType = self.isOptionSelectedByKey(key: "show_touches")
-            break
-        case .togglePointerLocation:
-            isOptionEnabledByCommandType = self.isOptionSelectedByKey(key: "pointer_location")
-        default:
-            isOptionEnabledByCommandType = false
-            break
-        }
-        return isOptionEnabledByCommandType
     }
     
     private func onTryCommandLine(command: String) {
@@ -94,6 +126,10 @@ class AndroidOptionsViewModel {
     
     private func isOptionSelectedByKey(key: String) -> Bool {
         let properityInfo = self.getProperityValueByInformationKey(key: key)
+        if properityInfo.isEmpty {
+            return false
+        }
+        
         let rowFragments = properityInfo.split(separator: "=")
         if rowFragments[1].contains("1") {
             return true
@@ -111,6 +147,19 @@ class AndroidOptionsViewModel {
             }
         }
         return targetRow
+    }
+    
+    private func isSingleProperityEnabled(key: String) -> Bool {
+        let result = self.getProperityValueByInformationKey(key: key)
+        if result.isEmpty {
+            return false
+        }
+        
+        if result.contains("1") {
+            return true
+        } else {
+            return false
+        }
     }
     
     private func getDeviceInformationByAdb() -> [String] {
