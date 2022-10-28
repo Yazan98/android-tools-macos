@@ -9,6 +9,9 @@ import SwiftUI
 
 @main
 struct AvaluggApp: App {
+    
+    @NSApplicationDelegateAdaptor(RootAppDelegate.self) private var appDelegate
+
     var body: some Scene {
         WindowGroup {
             ContentView()

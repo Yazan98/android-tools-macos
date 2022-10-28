@@ -14,6 +14,12 @@
 		8A07385A290BA93A000C76D0 /* AvaluggTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073859290BA93A000C76D0 /* AvaluggTests.swift */; };
 		8A073864290BA93A000C76D0 /* AvaluggUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073863290BA93A000C76D0 /* AvaluggUITests.swift */; };
 		8A073866290BA93A000C76D0 /* AvaluggUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073865290BA93A000C76D0 /* AvaluggUITestsLaunchTests.swift */; };
+		8A073874290BABA9000C76D0 /* AvaluggMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073873290BABA9000C76D0 /* AvaluggMenuView.swift */; };
+		8A073876290BAC08000C76D0 /* RootAppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073875290BAC08000C76D0 /* RootAppDelegate.swift */; };
+		8A073879290BAC7C000C76D0 /* AndroidEventType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073878290BAC7C000C76D0 /* AndroidEventType.swift */; };
+		8A07387B290BB0C0000C76D0 /* PanelOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07387A290BB0C0000C76D0 /* PanelOptionView.swift */; };
+		8A07387D290BB1C5000C76D0 /* AndroidOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07387C290BB1C5000C76D0 /* AndroidOptionsViewModel.swift */; };
+		8A07387F290BB26C000C76D0 /* AvaluggOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07387E290BB26C000C76D0 /* AvaluggOptionModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -45,6 +51,12 @@
 		8A07385F290BA93A000C76D0 /* AvaluggUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AvaluggUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8A073863290BA93A000C76D0 /* AvaluggUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaluggUITests.swift; sourceTree = "<group>"; };
 		8A073865290BA93A000C76D0 /* AvaluggUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaluggUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		8A073873290BABA9000C76D0 /* AvaluggMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaluggMenuView.swift; sourceTree = "<group>"; };
+		8A073875290BAC08000C76D0 /* RootAppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootAppDelegate.swift; sourceTree = "<group>"; };
+		8A073878290BAC7C000C76D0 /* AndroidEventType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidEventType.swift; sourceTree = "<group>"; };
+		8A07387A290BB0C0000C76D0 /* PanelOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelOptionView.swift; sourceTree = "<group>"; };
+		8A07387C290BB1C5000C76D0 /* AndroidOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidOptionsViewModel.swift; sourceTree = "<group>"; };
+		8A07387E290BB26C000C76D0 /* AvaluggOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaluggOptionModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -95,12 +107,14 @@
 		8A073846290BA939000C76D0 /* Avalugg */ = {
 			isa = PBXGroup;
 			children = (
+				8A073877290BAC6C000C76D0 /* models */,
 				8A073872290BA9DB000C76D0 /* views */,
 				8A073847290BA939000C76D0 /* AvaluggApp.swift */,
 				8A073849290BA939000C76D0 /* ContentView.swift */,
 				8A07384B290BA93A000C76D0 /* Assets.xcassets */,
 				8A073850290BA93A000C76D0 /* Avalugg.entitlements */,
 				8A07384D290BA93A000C76D0 /* Preview Content */,
+				8A073875290BAC08000C76D0 /* RootAppDelegate.swift */,
 			);
 			path = Avalugg;
 			sourceTree = "<group>";
@@ -133,8 +147,20 @@
 		8A073872290BA9DB000C76D0 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				8A073873290BABA9000C76D0 /* AvaluggMenuView.swift */,
+				8A07387A290BB0C0000C76D0 /* PanelOptionView.swift */,
 			);
 			path = views;
+			sourceTree = "<group>";
+		};
+		8A073877290BAC6C000C76D0 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				8A073878290BAC7C000C76D0 /* AndroidEventType.swift */,
+				8A07387C290BB1C5000C76D0 /* AndroidOptionsViewModel.swift */,
+				8A07387E290BB26C000C76D0 /* AvaluggOptionModel.swift */,
+			);
+			path = models;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -267,8 +293,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8A07387D290BB1C5000C76D0 /* AndroidOptionsViewModel.swift in Sources */,
+				8A07387B290BB0C0000C76D0 /* PanelOptionView.swift in Sources */,
+				8A073876290BAC08000C76D0 /* RootAppDelegate.swift in Sources */,
 				8A07384A290BA939000C76D0 /* ContentView.swift in Sources */,
+				8A07387F290BB26C000C76D0 /* AvaluggOptionModel.swift in Sources */,
 				8A073848290BA939000C76D0 /* AvaluggApp.swift in Sources */,
+				8A073879290BAC7C000C76D0 /* AndroidEventType.swift in Sources */,
+				8A073874290BABA9000C76D0 /* AvaluggMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
