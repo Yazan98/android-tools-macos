@@ -10,7 +10,7 @@ import SwiftUI
 struct PanelOptionView: View {
     
     // Views Listeners
-    @State private var isOptionEnabled = true
+    @State private var isOptionEnabled = false
     
     // View Information
     private var optionName: String = ""
@@ -23,6 +23,11 @@ struct PanelOptionView: View {
         self.optionType = optionType
         self.viewModel = viewModel
         self.isOptionEnabled = viewModel.isOptionEnabled(androidEvent: optionType)
+        if viewModel.isOptionEnabled(androidEvent: optionType) {
+            print("III :: \(self.optionName) : True")
+        } else {
+            print("III :: \(self.optionName) : Flase")
+        }
     }
     
     var body: some View {
@@ -33,8 +38,19 @@ struct PanelOptionView: View {
             
             Toggle("", isOn: $isOptionEnabled)
                 .toggleStyle(SwitchToggleStyle(tint: .red))
+                .onChange(of: isOptionEnabled) { value in
+                    viewModel.onSwitchTriggered(optionType: optionType, state: value)
+                }.onAppear(perform: fetch)
                 
         }.padding(10).frame(width: 290)
+    }
+    
+    private func fetch() {
+        if isOptionEnabled {
+            print("Name : " + optionName + " : True")
+        } else {
+            print("Name : " + optionName + " : False")
+        }
     }
     
 }
