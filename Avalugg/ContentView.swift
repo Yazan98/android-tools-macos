@@ -7,6 +7,10 @@
 
 import SwiftUI
 
+/**
+ A Not Used Window
+ This Exists here because i need to test the window design before i add it to menu item
+ */
 struct ContentView: View {
     var body: some View {
         VStack {

@@ -163,7 +163,7 @@ class AndroidOptionsViewModel {
     }
     
     private func getDeviceInformationByAdb() -> [String] {
-        var commandResults = try? safeShell(self.getAndroidDebugBridgeConnectionPath() + " " + COMMAND_GET_DEVICE_INFORMATION)
+        let commandResults = try? safeShell(self.getAndroidDebugBridgeConnectionPath() + " " + COMMAND_GET_DEVICE_INFORMATION)
         return ("" + commandResults!).split{$0 == "\n"}.map(String.init)
     }
     

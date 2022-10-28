@@ -10,6 +10,7 @@ import SwiftUI
 struct AvaluggMenuView: View {
     
     private let menu = NSMenu()
+    private let applicationMenuConfiguration = ApplicationMenuConfiguration()
     private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
     
     var body: some View {
@@ -43,6 +44,26 @@ struct AvaluggMenuView: View {
         
         menu.addItem(customMenu)
         menu.addItem(NSMenuItem.separator())
+        
+        let aboutMenuItem = applicationMenuConfiguration.getAboutMenuItem()
+        aboutMenuItem.target = applicationMenuConfiguration
+        
+        let repositoryLink = applicationMenuConfiguration.getRepositoryLinkMenuItem()
+        repositoryLink.target = applicationMenuConfiguration
+        repositoryLink.representedObject = "https://github.com/Yazan98/android-tools-macos"
+        
+        let repositorySubmitIssueLink = applicationMenuConfiguration.getRepositorySubmitIssueLinkMenuItem()
+        repositorySubmitIssueLink.target = applicationMenuConfiguration
+        repositorySubmitIssueLink.representedObject = "https://github.com/Yazan98/android-tools-macos/issues"
+
+        let quitButtonItem = applicationMenuConfiguration.getQuitApplicationMenuItem()
+        quitButtonItem.target = applicationMenuConfiguration
+        
+        menu.addItem(repositoryLink)
+        menu.addItem(repositorySubmitIssueLink)
+        menu.addItem(aboutMenuItem)
+        menu.addItem(quitButtonItem)
+        
         return menu
     }
     

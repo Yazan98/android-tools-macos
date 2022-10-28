@@ -20,6 +20,8 @@
 		8A07387B290BB0C0000C76D0 /* PanelOptionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07387A290BB0C0000C76D0 /* PanelOptionView.swift */; };
 		8A07387D290BB1C5000C76D0 /* AndroidOptionsViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07387C290BB1C5000C76D0 /* AndroidOptionsViewModel.swift */; };
 		8A07387F290BB26C000C76D0 /* AvaluggOptionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A07387E290BB26C000C76D0 /* AvaluggOptionModel.swift */; };
+		8A073881290C830F000C76D0 /* ApplicationMenuConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8A073880290C830F000C76D0 /* ApplicationMenuConfig.swift */; };
+		8A073883290C83C9000C76D0 /* Credits.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 8A073882290C83C9000C76D0 /* Credits.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +59,8 @@
 		8A07387A290BB0C0000C76D0 /* PanelOptionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PanelOptionView.swift; sourceTree = "<group>"; };
 		8A07387C290BB1C5000C76D0 /* AndroidOptionsViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AndroidOptionsViewModel.swift; sourceTree = "<group>"; };
 		8A07387E290BB26C000C76D0 /* AvaluggOptionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvaluggOptionModel.swift; sourceTree = "<group>"; };
+		8A073880290C830F000C76D0 /* ApplicationMenuConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationMenuConfig.swift; sourceTree = "<group>"; };
+		8A073882290C83C9000C76D0 /* Credits.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = Credits.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +119,7 @@
 				8A073850290BA93A000C76D0 /* Avalugg.entitlements */,
 				8A07384D290BA93A000C76D0 /* Preview Content */,
 				8A073875290BAC08000C76D0 /* RootAppDelegate.swift */,
+				8A073882290C83C9000C76D0 /* Credits.rtf */,
 			);
 			path = Avalugg;
 			sourceTree = "<group>";
@@ -149,6 +154,7 @@
 			children = (
 				8A073873290BABA9000C76D0 /* AvaluggMenuView.swift */,
 				8A07387A290BB0C0000C76D0 /* PanelOptionView.swift */,
+				8A073880290C830F000C76D0 /* ApplicationMenuConfig.swift */,
 			);
 			path = views;
 			sourceTree = "<group>";
@@ -268,6 +274,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8A07384F290BA93A000C76D0 /* Preview Assets.xcassets in Resources */,
+				8A073883290C83C9000C76D0 /* Credits.rtf in Resources */,
 				8A07384C290BA93A000C76D0 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +305,7 @@
 				8A073876290BAC08000C76D0 /* RootAppDelegate.swift in Sources */,
 				8A07384A290BA939000C76D0 /* ContentView.swift in Sources */,
 				8A07387F290BB26C000C76D0 /* AvaluggOptionModel.swift in Sources */,
+				8A073881290C830F000C76D0 /* ApplicationMenuConfig.swift in Sources */,
 				8A073848290BA939000C76D0 /* AvaluggApp.swift in Sources */,
 				8A073879290BAC7C000C76D0 /* AndroidEventType.swift in Sources */,
 				8A073874290BABA9000C76D0 /* AvaluggMenuView.swift in Sources */,
@@ -463,6 +471,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -489,6 +498,7 @@
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
