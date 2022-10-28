@@ -6,7 +6,6 @@
 //
 
 import Foundation
-import Cocoa
 
 class AndroidOptionsViewModel {
     
@@ -48,21 +47,31 @@ class AndroidOptionsViewModel {
     }
     
     func getAdbConnectedDevice() -> String {
-        return "Your Device Connected : " + shell("adb devices")
+        let result = try? safeShell(self.getAndroidDebugBridgeConnectionPath() + " devices")
+        return "Your Device Connected : " + result!
     }
     
-    func shell(_ command: String) -> String {
+    @discardableResult
+    func safeShell(_ command: String) throws -> String {
         let task = Process()
-                task.launchPath = "/bin/zsh"
-                let mac:[String] = ["-c", command]
-                task.arguments = mac
-                // ifconfig en0 | awk '/ether/{print $2}'
-                let pipe = Pipe()
-                task.standardOutput = pipe
-                task.launch()
-                task.waitUntilExit()
-                let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        return String(data: data,  encoding: .utf8)!
+        let pipe = Pipe()
+        
+        task.standardOutput = pipe
+        task.standardError = pipe
+        task.arguments = ["-c", command]
+        task.executableURL = URL(fileURLWithPath: "/bin/zsh")
+        task.standardInput = nil
+
+        try task.run()
+        
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let output = String(data: data, encoding: .utf8)!
+        
+        return output
+    }
+    
+    func getAndroidDebugBridgeConnectionPath() -> String {
+        return "~/Library/Android/sdk/platform-tools/adb"
     }
     
 }
