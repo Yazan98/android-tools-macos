@@ -13,11 +13,11 @@ This Project Built to Easely Switch Developer Options in Android Devices in Case
 
 1. Application Window
 
-<img width="350" alt="Screen Shot 2022-10-29 at 2 06 30 AM" src="https://user-images.githubusercontent.com/29167110/198749027-42d4db19-4ec9-4f84-a49a-3ba465c233ff.png">
+<img width="338" alt="Screen Shot 2022-10-29 at 2 15 24 AM" src="https://user-images.githubusercontent.com/29167110/198749368-8bfc9c5a-9c3a-4490-aa8f-dcd104219c1e.png">
 
 2. Application Screenshot in Android Studio
 
-<img width="1728" alt="Screen Shot 2022-10-29 at 2 06 20 AM" src="https://user-images.githubusercontent.com/29167110/198749060-f1462139-6846-4de1-b0c8-00e9a8889d6b.png">
+<img width="1728" alt="Screen Shot 2022-10-29 at 2 15 12 AM" src="https://user-images.githubusercontent.com/29167110/198749376-e8049864-f7ba-4e2f-8765-e6c5b440c2a4.png">
 
 ## License
 
