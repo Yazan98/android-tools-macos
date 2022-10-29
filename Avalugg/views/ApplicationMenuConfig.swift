@@ -52,7 +52,7 @@ class ApplicationMenuConfiguration : NSObject {
         return NSMenuItem(
             title: "Quit",
             action: #selector(onOpenApplicationRepositoryLink),
-            keyEquivalent: "q"
+            keyEquivalent: ""
         )
     }
     

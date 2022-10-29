@@ -22,7 +22,6 @@ struct PanelOptionView: View {
         self.optionName = optionName
         self.optionType = optionType
         self.viewModel = viewModel
-        self.isOptionEnabled = viewModel.isOptionEnabled(androidEvent: optionType)
     }
     
     var body: some View {
@@ -35,13 +34,23 @@ struct PanelOptionView: View {
                 .toggleStyle(SwitchToggleStyle(tint: .red))
                 .onChange(of: isOptionEnabled) { value in
                     viewModel.onSwitchTriggered(optionType: optionType, state: value)
-                }.onAppear(perform: fetch)
-                
-        }.padding(10).frame(width: 290)
+                }
+        }
+        .padding(10)
+        .frame(width: 290)
+        .onAppear(perform: fetch)
+        .onDisappear {
+            self.isOptionEnabled = false
+        }
     }
     
     private func fetch() {
-        self.isOptionEnabled = viewModel.isOptionEnabled(androidEvent: optionType)
+        DispatchQueue.global(qos: .background).async {
+            let isOptionEnabledResult = viewModel.isOptionEnabled(androidEvent: optionType)
+            DispatchQueue.main.async {
+                self.isOptionEnabled = isOptionEnabledResult
+            }
+        }
     }
     
 }

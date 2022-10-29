@@ -14,8 +14,8 @@
             filePath = "Avalugg/models/AndroidOptionsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "190"
-            endingLineNumber = "190"
+            startingLineNumber = "180"
+            endingLineNumber = "180"
             landmarkName = "getConnectedDeviceName()"
             landmarkType = "7">
          </BreakpointContent>
@@ -30,8 +30,8 @@
             filePath = "Avalugg/models/AndroidOptionsViewModel.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "175"
-            endingLineNumber = "175"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
             landmarkName = "getConnectedDeviceName()"
             landmarkType = "7">
          </BreakpointContent>
@@ -40,7 +40,7 @@
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
             uuid = "5CDF3F49-846A-42DC-862D-4BC890834695"
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Avalugg/views/PanelOptionView.swift"
@@ -55,94 +55,207 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            uuid = "5A96675A-07E0-40A5-B1B4-D9C603638FAE"
+            uuid = "08539180-DADA-4150-BC0E-28D224488A95"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Avalugg/views/AvaluggMenuView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "onMainViewAppear()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6C199139-F43B-4A82-A909-A1BCA00E7F42"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Avalugg/views/AvaluggMenuView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "onMainViewAppear()"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "6C199139-F43B-4A82-A909-A1BCA00E7F42 - 9c4ff2644c1f2f1c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Avalugg.AvaluggMenuView.onMainViewAppear() -&gt; ()"
+                  moduleName = "Avalugg"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/AvaluggMenuView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "312">
+               </Location>
+               <Location
+                  uuid = "6C199139-F43B-4A82-A909-A1BCA00E7F42 - 86adcc7eb9fd9dd7"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; () in Avalugg.AvaluggMenuView.onMainViewAppear() -&gt; ()"
+                  moduleName = "Avalugg"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/AvaluggMenuView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "40"
+                  endingLineNumber = "40"
+                  offsetFromSymbolStart = "56">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "69D01A32-1746-44FB-825E-01A9E6C2611D"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Avalugg/models/AndroidOptionsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "204"
+            endingLineNumber = "204"
+            landmarkName = "validateConnectedDevice()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E026B6BC-9A4B-46D5-83F8-4671E3968528"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Avalugg/models/AndroidOptionsViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "176"
+            endingLineNumber = "176"
+            landmarkName = "getConnectedDeviceName()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "DC153D33-A381-4C5F-A4FF-25C1FFDA7795"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Avalugg/views/AvaluggMenuView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "83"
+            endingLineNumber = "83"
+            landmarkName = "createMenu()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "212F155D-B528-4150-9A50-6A9DE0669551"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Avalugg/views/AvaluggMenuView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "17"
+            endingLineNumber = "17"
+            landmarkName = "body"
+            landmarkType = "24">
+            <Locations>
+               <Location
+                  uuid = "212F155D-B528-4150-9A50-6A9DE0669551 - 60a887c7853ac27e"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Avalugg.AvaluggMenuView.body.getter : some"
+                  moduleName = "Avalugg"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/AvaluggMenuView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "17"
+                  endingLineNumber = "17"
+                  offsetFromSymbolStart = "508">
+               </Location>
+               <Location
+                  uuid = "212F155D-B528-4150-9A50-6A9DE0669551 - 44833c1a145faca6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "closure #1 () -&gt; SwiftUI.TupleView&lt;(SwiftUI.Spacer, &lt;&lt;opaque return type of SwiftUI.View.padding(CoreGraphics.CGFloat) -&gt; some&gt;&gt;.0, SwiftUI.ForEach&lt;Swift.Array&lt;Avalugg.AvaluggOptionModel&gt;, Avalugg.AvaluggOptionModel, Avalugg.PanelOptionView&gt;, SwiftUI.Spacer)&gt; in Avalugg.AvaluggMenuView.body.getter : some"
+                  moduleName = "Avalugg"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/AvaluggMenuView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "18"
+                  endingLineNumber = "18"
+                  offsetFromSymbolStart = "388">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "2DCAC20A-E037-4EE6-8286-E4F2B3BA4410"
             shouldBeEnabled = "Yes"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Avalugg/views/PanelOptionView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
-            landmarkName = "body"
-            landmarkType = "24">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "234BC86B-77A8-49CD-821E-21FAE2861908"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Avalugg/models/AndroidOptionsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "187"
-            endingLineNumber = "187"
-            landmarkName = "getConnectedDeviceName()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "14A3F406-49D3-4357-BDAE-7110EFE72948"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Avalugg/models/AndroidOptionsViewModel.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "186"
-            endingLineNumber = "186"
-            landmarkName = "getConnectedDeviceName()"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "fetch()"
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "14A3F406-49D3-4357-BDAE-7110EFE72948 - 631e9bdf7d119a6f"
+                  uuid = "2DCAC20A-E037-4EE6-8286-E4F2B3BA4410 - 2a101a04fe443f75"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "Avalugg.AndroidOptionsViewModel.getConnectedDeviceName() -&gt; Swift.String"
+                  symbolName = "Avalugg.PanelOptionView.fetch() -&gt; ()"
                   moduleName = "Avalugg"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/models/AndroidOptionsViewModel.swift"
+                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/PanelOptionView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "980">
+                  startingLineNumber = "51"
+                  endingLineNumber = "51"
+                  offsetFromSymbolStart = "264">
                </Location>
                <Location
-                  uuid = "14A3F406-49D3-4357-BDAE-7110EFE72948 - ed06abdb4984bca6"
+                  uuid = "2DCAC20A-E037-4EE6-8286-E4F2B3BA4410 - 7ce923e1466a38b8"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
-                  symbolName = "closure #2 (Swift.Character) -&gt; Swift.Bool in Avalugg.AndroidOptionsViewModel.getConnectedDeviceName() -&gt; Swift.String"
+                  symbolName = "closure #1 () -&gt; () in Avalugg.PanelOptionView.fetch() -&gt; ()"
                   moduleName = "Avalugg"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/models/AndroidOptionsViewModel.swift"
+                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/PanelOptionView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "68">
-               </Location>
-               <Location
-                  uuid = "14A3F406-49D3-4357-BDAE-7110EFE72948 - c1adb9ad21f2877c"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "implicit closure #2 (__shared Swift.Substring) -&gt; Swift.String in Avalugg.AndroidOptionsViewModel.getConnectedDeviceName() -&gt; Swift.String"
-                  moduleName = "Avalugg"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/models/AndroidOptionsViewModel.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "113"
-                  endingLineNumber = "113"
-                  offsetFromSymbolStart = "44">
+                  startingLineNumber = "52"
+                  endingLineNumber = "52"
+                  offsetFromSymbolStart = "228">
                </Location>
             </Locations>
          </BreakpointContent>

@@ -7,9 +7,9 @@
 
 import Foundation
 
-class AndroidOptionsViewModel {
+class AndroidOptionsViewModel : ObservableObject {
     
-    private var currentConnectedDevice: String = ""
+    @Published private(set) var currentConnectedDevice: String = ""
     private let COMMAND_GET_DEVICE_INFORMATION = "shell settings list system"
     
     func onSwitchTriggered(optionType: AndroidEventType, state: Bool) {
@@ -54,7 +54,6 @@ class AndroidOptionsViewModel {
     
     private func isProperitySelected(key: String) -> Bool {
         let commandPath = getAndroidDebugBridgeConnectionPath() + " " + "shell getprop " + key
-        print("Command : " + commandPath)
         let properityInfo = try? self.safeShell(commandPath)
         if properityInfo!.isEmpty {
             return false
@@ -177,6 +176,10 @@ class AndroidOptionsViewModel {
             return currentConnectedDevice
         }
         
+        return requestConnectedDevice()
+    }
+    
+    private func requestConnectedDevice() -> String {
         let result = try? safeShell(self.getAndroidDebugBridgeConnectionPath() + " devices")
         let devices = result!.split{$0 == "\n"}.map(String.init)
         if devices.count == 1 {
@@ -185,13 +188,19 @@ class AndroidOptionsViewModel {
         
         let firstDevice = devices[1].split{$0 == " "}.map(String.init)
         let resultFiltered = firstDevice[0].replacingOccurrences(of: "device", with: "").trimmingCharacters(in: .whitespaces)
-        currentConnectedDevice = resultFiltered
+        DispatchQueue.main.async {
+            self.currentConnectedDevice = resultFiltered
+        }
         return resultFiltered
     }
     
     func validateConnectedDevice() {
-        currentConnectedDevice = ""
-        getConnectedDeviceName()
+        DispatchQueue.global(qos: .background).async {
+            let currentActiveDevice = self.requestConnectedDevice()
+            DispatchQueue.main.async {
+                self.currentConnectedDevice = currentActiveDevice
+            }
+        }
     }
     
     @discardableResult

@@ -11,19 +11,14 @@ struct AvaluggMenuView: View {
     
     private let menu = NSMenu()
     private let applicationMenuConfiguration = ApplicationMenuConfiguration()
-    private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
-    @State private var connectedDeviceInformation = ""
-    
-    init() {
-        connectedDeviceInformation = viewModel.getAdbConnectedDevice()
-    }
+    @ObservedObject private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
     
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
             VStack(alignment: .leading) {
                 Text("Android Device Developer Options")
-                Text(connectedDeviceInformation).font(.system(size: 10))
+                Text("Your Connected Device : " + viewModel.currentConnectedDevice).font(.system(size: 10))
             }.padding(10)
             
             ForEach(viewModel.getOptionsList(), id: \.self) { option in
@@ -35,6 +30,15 @@ struct AvaluggMenuView: View {
             }
             
             Spacer()
+            Spacer()
+            
+            Text("Request Connected Device")
+                .padding(10)
+                .onTapGesture {
+                    viewModel.validateConnectedDevice()
+                }
+            
+            Spacer()
         }
         .padding(10)
         .onAppear(perform: onMainViewAppear)
@@ -43,7 +47,6 @@ struct AvaluggMenuView: View {
     func onMainViewAppear() {
         DispatchQueue.global(qos: .background).async {
             viewModel.validateConnectedDevice()
-            connectedDeviceInformation = viewModel.getAdbConnectedDevice()
         }
     }
     
@@ -51,7 +54,7 @@ struct AvaluggMenuView: View {
         let parentView = AvaluggMenuView()
         let topView = NSHostingController(rootView: parentView)
         topView.view.frame.size = CGSize(width: 300, height: 300)
-        
+                
         let customMenu = NSMenuItem()
         customMenu.view = topView.view
         
