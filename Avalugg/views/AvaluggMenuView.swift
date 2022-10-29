@@ -9,10 +9,18 @@ import SwiftUI
 
 struct AvaluggMenuView: View {
     
+    // ViewModels
+    @ObservedObject private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
+    @ObservedObject private var commandsViewModel: ApplicationCommandsViewModel = ApplicationCommandsViewModel()
+    
+    // Application Listeners
+    @State var refresh: Bool = false
+    @State var applicationPackageNameInput: String = ""
+    
+    // Application Information
     private let menu = NSMenu()
     private let applicationMenuConfiguration = ApplicationMenuConfiguration()
-    @ObservedObject private var viewModel: AndroidOptionsViewModel = AndroidOptionsViewModel()
-    
+
     var body: some View {
         VStack(alignment: .leading) {
             Spacer()
@@ -29,22 +37,45 @@ struct AvaluggMenuView: View {
                 )
             }
             
+            Text("")
+            
+            Text("Application Development")
+                .padding(.top, 10)
+                .padding(.horizontal, 10)
+            
+            TextField(
+              "Application Package Name",
+              text: $applicationPackageNameInput,
+              onEditingChanged: { changed in
+                  UserDefaults.standard.set(applicationPackageNameInput, forKey: "ApplicationWorkingPackageName")
+              }
+            ).padding(10)
+            
+            ForEach(commandsViewModel.getApplicationOptions(), id: \.self) { option in
+                ApplicationOptionView(
+                    viewModel: viewModel,
+                    applicationViewModel: commandsViewModel,
+                    optionName: option.optionName,
+                    optionKey: option.optionKey
+                )
+            }
+            
             Spacer()
-            Spacer()
+            
             
             Text("Request Connected Device")
                 .padding(10)
                 .onTapGesture {
                     viewModel.validateConnectedDevice()
                 }
-            
-            Spacer()
         }
         .padding(10)
         .onAppear(perform: onMainViewAppear)
     }
     
     func onMainViewAppear() {
+        refresh.toggle()
+        applicationPackageNameInput = UserDefaults.standard.string(forKey: "ApplicationWorkingPackageName") ?? ""
         DispatchQueue.global(qos: .background).async {
             viewModel.validateConnectedDevice()
         }
@@ -53,7 +84,7 @@ struct AvaluggMenuView: View {
     func createMenu() -> NSMenu {
         let parentView = AvaluggMenuView()
         let topView = NSHostingController(rootView: parentView)
-        topView.view.frame.size = CGSize(width: 300, height: 300)
+        topView.view.frame.size = CGSize(width: 300, height: 550)
                 
         let customMenu = NSMenuItem()
         customMenu.view = topView.view

@@ -62,8 +62,8 @@
             filePath = "Avalugg/views/AvaluggMenuView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "49"
-            endingLineNumber = "49"
+            startingLineNumber = "80"
+            endingLineNumber = "80"
             landmarkName = "onMainViewAppear()"
             landmarkType = "7">
          </BreakpointContent>
@@ -78,8 +78,8 @@
             filePath = "Avalugg/views/AvaluggMenuView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "79"
+            endingLineNumber = "79"
             landmarkName = "onMainViewAppear()"
             landmarkType = "7">
             <Locations>
@@ -158,8 +158,8 @@
             filePath = "Avalugg/views/AvaluggMenuView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "83"
-            endingLineNumber = "83"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
             landmarkName = "createMenu()"
             landmarkType = "7">
          </BreakpointContent>
@@ -174,8 +174,8 @@
             filePath = "Avalugg/views/AvaluggMenuView.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "17"
-            endingLineNumber = "17"
+            startingLineNumber = "25"
+            endingLineNumber = "25"
             landmarkName = "body"
             landmarkType = "24">
             <Locations>
@@ -208,54 +208,6 @@
                   startingLineNumber = "18"
                   endingLineNumber = "18"
                   offsetFromSymbolStart = "388">
-               </Location>
-            </Locations>
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "2DCAC20A-E037-4EE6-8286-E4F2B3BA4410"
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Avalugg/views/PanelOptionView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
-            landmarkName = "fetch()"
-            landmarkType = "7">
-            <Locations>
-               <Location
-                  uuid = "2DCAC20A-E037-4EE6-8286-E4F2B3BA4410 - 2a101a04fe443f75"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "Avalugg.PanelOptionView.fetch() -&gt; ()"
-                  moduleName = "Avalugg"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/PanelOptionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "51"
-                  endingLineNumber = "51"
-                  offsetFromSymbolStart = "264">
-               </Location>
-               <Location
-                  uuid = "2DCAC20A-E037-4EE6-8286-E4F2B3BA4410 - 7ce923e1466a38b8"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; () in Avalugg.PanelOptionView.fetch() -&gt; ()"
-                  moduleName = "Avalugg"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/yazantarifi/DevelopmentProjects/android-tools-macos/Avalugg/views/PanelOptionView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "52"
-                  endingLineNumber = "52"
-                  offsetFromSymbolStart = "228">
                </Location>
             </Locations>
          </BreakpointContent>

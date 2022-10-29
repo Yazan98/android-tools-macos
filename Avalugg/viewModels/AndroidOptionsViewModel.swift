@@ -171,7 +171,7 @@ class AndroidOptionsViewModel : ObservableObject {
         return "Your Device Connected : " + self.getConnectedDeviceName()
     }
     
-    private func getConnectedDeviceName() -> String {
+    func getConnectedDeviceName() -> String {
         if !currentConnectedDevice.isEmpty {
             return currentConnectedDevice
         }
@@ -222,7 +222,7 @@ class AndroidOptionsViewModel : ObservableObject {
         return output
     }
     
-    private func getAndroidDebugBridgeConnectionPath() -> String {
+    func getAndroidDebugBridgeConnectionPath() -> String {
         return "~/Library/Android/sdk/platform-tools/adb"
     }
     

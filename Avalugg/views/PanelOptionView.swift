@@ -30,17 +30,18 @@ struct PanelOptionView: View {
             
             Spacer()
             
-            Toggle("", isOn: $isOptionEnabled)
-                .toggleStyle(SwitchToggleStyle(tint: .red))
-                .onChange(of: isOptionEnabled) { value in
-                    viewModel.onSwitchTriggered(optionType: optionType, state: value)
-                }
+            if isOptionEnabled {
+                Text("Activated").foregroundColor(.green)
+            } else {
+                Text("Not Activated").foregroundColor(.red)
+            }
         }
         .padding(10)
         .frame(width: 290)
         .onAppear(perform: fetch)
-        .onDisappear {
-            self.isOptionEnabled = false
+        .onTapGesture {
+            viewModel.onSwitchTriggered(optionType: optionType, state: !isOptionEnabled)
+            fetch()
         }
     }
     
